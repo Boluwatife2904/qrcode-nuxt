@@ -4,7 +4,9 @@ dist
 .output
 docs/.nuxt
 docs/.output
+docs/.vercel
 docs/node_modules/.cache
+.vercel
 .DS_Store
 .env
 .env.local
