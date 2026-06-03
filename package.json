@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Highly customizable SVG QR code component and Nuxt module for Vue/Nuxt.",
   "type": "module",
+  "packageManager": "pnpm@9.15.1",
   "license": "MIT",
   "author": "",
   "homepage": "https://github.com/Boluwatife2904/qrcode-nuxt",
