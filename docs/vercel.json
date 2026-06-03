@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd .. && pnpm run build && NITRO_PRESET=vercel pnpm run docs:build",
+  "installCommand": "cd .. && pnpm install",
+  "framework": null
+}
