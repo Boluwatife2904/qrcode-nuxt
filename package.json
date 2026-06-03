@@ -1,0 +1,69 @@
+{
+  "name": "qrcode-nuxt",
+  "version": "1.0.0",
+  "description": "Highly customizable SVG QR code component and Nuxt module for Vue/Nuxt.",
+  "type": "module",
+  "license": "MIT",
+  "author": "",
+  "homepage": "https://github.com/Boluwatife2904/qrcode-nuxt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Boluwatife2904/qrcode-nuxt.git"
+  },
+  "keywords": [
+    "nuxt",
+    "vue",
+    "qrcode",
+    "qr-code",
+    "svg",
+    "nuxt-module",
+    "customizable-qr-code"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    },
+    "./runtime": {
+      "types": "./dist/runtime/index.d.ts",
+      "import": "./dist/runtime/index.js"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "module": "./dist/module.mjs",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "dev": "nuxi dev docs",
+    "docs:build": "nuxi build docs",
+    "docs:generate": "nuxi generate docs",
+    "typecheck": "vue-tsc --noEmit",
+    "prepack": "npm run build",
+    "release:patch": "pnpm version patch --no-git-tag-version",
+    "release:minor": "pnpm version minor --no-git-tag-version",
+    "release:major": "pnpm version major --no-git-tag-version"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.0.0 || ^4.0.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^4.4.7",
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/node": "^25.9.1",
+    "@vue/tsconfig": "^0.8.1",
+    "highlight.js": "^11.11.1",
+    "nuxt": "^4.4.7",
+    "nuxt-og-image": "^6.5.1",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.35",
+    "vue-tsc": "^3.1.5"
+  }
+}
