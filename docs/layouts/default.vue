@@ -1,38 +1,4 @@
 <script setup lang="ts">
-const route = useRoute();
-const { public: { version } } = useRuntimeConfig();
-const mobileOpen = ref(false);
-const isDark = ref(true);
-
-onMounted(() => {
-  const saved = localStorage.getItem("qrcode-nuxt-theme");
-  if (saved === "light") {
-    isDark.value = false;
-    document.documentElement.classList.add("light");
-  }
-});
-
-const toggleTheme = () => {
-  const html = document.documentElement;
-  html.classList.add("no-transitions");
-
-  isDark.value = !isDark.value;
-  if (isDark.value) {
-    html.classList.remove("light");
-    localStorage.setItem("qrcode-nuxt-theme", "dark");
-  } else {
-    html.classList.add("light");
-    localStorage.setItem("qrcode-nuxt-theme", "light");
-  }
-
-  // Remove after the browser has painted the new theme
-  requestAnimationFrame(() =>
-    requestAnimationFrame(() => {
-      html.classList.remove("no-transitions");
-    }),
-  );
-}
-
 interface NavItem {
   label: string;
   to: string;
@@ -42,6 +8,15 @@ interface NavSection {
   title: string;
   items: NavItem[];
 }
+
+const route = useRoute();
+
+const {
+  public: { version },
+} = useRuntimeConfig();
+
+const mobileOpen = ref(false);
+const isDark = ref(true);
 
 const nav: NavSection[] = [
   {
@@ -89,6 +64,35 @@ const allPages = nav.flatMap((s) => s.items.filter((i) => !i.external));
 const currentIndex = computed(() => allPages.findIndex((p) => p.to === route.path));
 const prevPage = computed(() => (currentIndex.value > 0 ? allPages[currentIndex.value - 1] : null));
 const nextPage = computed(() => (currentIndex.value < allPages.length - 1 ? allPages[currentIndex.value + 1] : null));
+
+const toggleTheme = () => {
+  const html = document.documentElement;
+  html.classList.add("no-transitions");
+
+  isDark.value = !isDark.value;
+  if (isDark.value) {
+    html.classList.remove("light");
+    localStorage.setItem("qrcode-nuxt-theme", "dark");
+  } else {
+    html.classList.add("light");
+    localStorage.setItem("qrcode-nuxt-theme", "light");
+  }
+
+  // Remove after the browser has painted the new theme
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => {
+      html.classList.remove("no-transitions");
+    }),
+  );
+};
+
+onMounted(() => {
+  const saved = localStorage.getItem("qrcode-nuxt-theme");
+  if (saved === "light") {
+    isDark.value = false;
+    document.documentElement.classList.add("light");
+  }
+});
 
 watch(
   () => route.path,

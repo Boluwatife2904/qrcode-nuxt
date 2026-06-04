@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const description = 'Start rendering customizable QR codes with a single line of markup. No imports needed — the component is auto-available in every Nuxt page.'
-usePageSeo('Quick Start', description)
-defineOgImage('DocsCover', { title: 'Quick Start', description })
+usePageSeo(
+  "Quick Start",
+  "Start rendering customizable QR codes with a single line of markup. No imports needed — the component is auto-available in every Nuxt page.",
+);
 </script>
 
 <template>
@@ -9,8 +10,8 @@ defineOgImage('DocsCover', { title: 'Quick Start', description })
     <div class="page-label">Getting Started</div>
     <h1>Quick Start</h1>
     <p>
-      Once installed, you can render a QR code with a single line of markup.
-      No imports needed in Nuxt — the component is automatically available everywhere.
+      Once installed, you can render a QR code with a single line of markup. No imports needed in Nuxt — the component
+      is automatically available everywhere.
     </p>
 
     <h2>Minimal example</h2>
@@ -30,8 +31,8 @@ defineOgImage('DocsCover', { title: 'Quick Start', description })
 
     <h2>With error correction</h2>
     <p>
-      Use the <code>level</code> prop to control error correction.
-      <code>H</code> allows up to 30% of the code to be damaged or covered (e.g. by a logo):
+      Use the <code>level</code> prop to control error correction. <code>H</code> allows up to 30% of the code to be
+      damaged or covered (e.g. by a logo):
     </p>
 
     <div class="demo-split">
@@ -49,9 +50,7 @@ defineOgImage('DocsCover', { title: 'Quick Start', description })
     </div>
 
     <h2>Styling with a gradient</h2>
-    <p>
-      Pass a <code>gradient</code> object to apply a linear or radial gradient across all QR code elements:
-    </p>
+    <p>Pass a <code>gradient</code> object to apply a linear or radial gradient across all QR code elements:</p>
 
     <div class="demo-split">
       <DocsCodeBlock
@@ -87,9 +86,7 @@ defineOgImage('DocsCover', { title: 'Quick Start', description })
     </div>
 
     <h2>Custom module style</h2>
-    <p>
-      Use <code>dataModulesSettings</code> to change the shape of the small data squares:
-    </p>
+    <p>Use <code>dataModulesSettings</code> to change the shape of the small data squares:</p>
 
     <div class="demo-split">
       <DocsCodeBlock
@@ -112,9 +109,7 @@ defineOgImage('DocsCover', { title: 'Quick Start', description })
     </div>
 
     <h2>Downloading the QR code</h2>
-    <p>
-      Expose the component with a template ref to access the <code>download()</code> method:
-    </p>
+    <p>Expose the component with a template ref to access the <code>download()</code> method:</p>
 
     <DocsCodeBlock
       lang="vue"
@@ -133,8 +128,8 @@ const qr = useTemplateRef<QrCodeNuxt>('qr')
     />
 
     <div class="callout callout-info">
-      See the <NuxtLink to="/api/ref-api">useQrcode &amp; Ref API</NuxtLink> page for the full
-      download options reference.
+      See the <NuxtLink to="/api/ref-api">useQrcode &amp; Ref API</NuxtLink> page for the full download options
+      reference.
     </div>
 
     <h2>Next steps</h2>
@@ -165,7 +160,11 @@ const qr = useTemplateRef<QrCodeNuxt>('qr')
   min-width: 160px;
 }
 @media (max-width: 600px) {
-  .demo-split { grid-template-columns: 1fr; }
-  .demo-preview { justify-content: center; }
+  .demo-split {
+    grid-template-columns: 1fr;
+  }
+  .demo-preview {
+    justify-content: center;
+  }
 }
 </style>

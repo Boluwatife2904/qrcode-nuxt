@@ -11,4 +11,6 @@ export const usePageSeo = (title: string, description: string) => {
     twitterTitle: `${title} | qrcode-nuxt`,
     twitterDescription: description,
   })
+
+  defineOgImage('DocsCover', { title, description })
 }

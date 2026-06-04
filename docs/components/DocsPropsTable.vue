@@ -1,17 +1,17 @@
 <script setup lang="ts">
 export interface PropRow {
-  name: string
-  type: string
-  default?: string
-  required?: boolean
-  description: string
+  name: string;
+  type: string;
+  default?: string;
+  required?: boolean;
+  description: string;
 }
 
 interface Props {
-  rows: PropRow[]
+  rows: PropRow[];
 }
 
-defineProps<Props>()
+defineProps<Props>();
 </script>
 
 <template>
@@ -31,7 +31,9 @@ defineProps<Props>()
             <code>{{ row.name }}</code>
             <span v-if="row.required" class="req" title="Required">*</span>
           </td>
-          <td class="pt-type"><code>{{ row.type }}</code></td>
+          <td class="pt-type">
+            <code>{{ row.type }}</code>
+          </td>
           <td class="pt-default">
             <code v-if="row.default !== undefined">{{ row.default }}</code>
             <span v-else class="dash">—</span>
@@ -62,10 +64,10 @@ th {
   padding: 10px 16px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: .07em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--muted);
-  background: rgba(255,255,255,.025);
+  background: rgba(255, 255, 255, 0.025);
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
 }
@@ -76,8 +78,12 @@ td {
   vertical-align: top;
   line-height: 1.55;
 }
-tr:last-child td { border-bottom: none; }
-tr:hover td { background: rgba(128,128,128,.04); }
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover td {
+  background: rgba(128, 128, 128, 0.04);
+}
 
 .pt-name code {
   font-family: var(--font-code);
@@ -116,7 +122,12 @@ tr:hover td { background: rgba(128,128,128,.04); }
   padding: 1px 5px;
   white-space: nowrap;
 }
-.dash { color: var(--muted); }
+.dash {
+  color: var(--muted);
+}
 
-.pt-desc { color: var(--prop-desc-color); max-width: 340px; }
+.pt-desc {
+  color: var(--prop-desc-color);
+  max-width: 340px;
+}
 </style>

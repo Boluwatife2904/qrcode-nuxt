@@ -1,43 +1,39 @@
 <script setup lang="ts">
-const description = 'Try the interactive qrcode-nuxt demo. Experiment with all component props and see live SVG QR code output.'
-usePageSeo('Demo', description)
-defineOgImage('DocsCover', { title: 'Interactive Demo', description })
-import type {
-  QrCodeNuxt,
-  DataModulesStyle,
-  FinderPatternOuterStyle,
-  FinderPatternInnerStyle,
-} from '../../src/runtime'
+usePageSeo(
+  "Demo",
+  "Try the interactive qrcode-nuxt demo. Experiment with all component props and see live SVG QR code output.",
+);
+import type { QrCodeNuxt, DataModulesStyle, FinderPatternOuterStyle, FinderPatternInnerStyle } from "../../src/runtime";
 
-const qr = useTemplateRef<QrCodeNuxt>('qr')
+const qr = useTemplateRef<QrCodeNuxt>("qr");
 
-const value = ref('https://nuxt.com')
-const size = ref(240)
-const level = ref<'L' | 'M' | 'Q' | 'H'>('H')
-const moduleStyle = ref<DataModulesStyle>('rounded')
-const useGradient = ref(true)
-const gradientType = ref<'linear' | 'radial'>('linear')
-const color1 = ref('#10b981')
-const color2 = ref('#3b82f6')
-const gradientAngle = ref(135)
-const bgColor = ref('#ffffff')
-const transparentBg = ref(false)
-const outerStyle = ref<FinderPatternOuterStyle>('rounded-lg')
-const innerStyle = ref<FinderPatternInnerStyle>('rounded-lg')
-const randomSize = ref(false)
+const value = ref("https://nuxt.com");
+const size = ref(240);
+const level = ref<"L" | "M" | "Q" | "H">("H");
+const moduleStyle = ref<DataModulesStyle>("rounded");
+const useGradient = ref(true);
+const gradientType = ref<"linear" | "radial">("linear");
+const color1 = ref("#10b981");
+const color2 = ref("#3b82f6");
+const gradientAngle = ref(135);
+const bgColor = ref("#ffffff");
+const transparentBg = ref(false);
+const outerStyle = ref<FinderPatternOuterStyle>("rounded-lg");
+const innerStyle = ref<FinderPatternInnerStyle>("rounded-lg");
+const randomSize = ref(false);
 
-const useImage = ref(false)
-const imageSrc = ref('')
-const imageWidth = ref(40)
-const imageHeight = ref(40)
-const imageExcavate = ref(true)
-const imageOpacity = ref(1)
+const useImage = ref(false);
+const imageSrc = ref("");
+const imageWidth = ref(40);
+const imageHeight = ref(40);
+const imageExcavate = ref(true);
+const imageOpacity = ref(1);
 </script>
 
 <template>
   <div>
     <div class="page-label">Getting Started</div>
-    <div class="prose" style="margin-bottom: 32px;">
+    <div class="prose" style="margin-bottom: 32px">
       <h1>Demo</h1>
       <p>Interactively configure every aspect of your QR code. All changes reflect live.</p>
     </div>
@@ -214,7 +210,14 @@ const imageOpacity = ref(1)
             <div class="ctrl-row">
               <label class="ctrl-label ctrl-label--sm">
                 Opacity
-                <input v-model.number="imageOpacity" type="range" min="0" max="1" step="0.05" class="ctrl-input ctrl-range" />
+                <input
+                  v-model.number="imageOpacity"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.05"
+                  class="ctrl-input ctrl-range"
+                />
               </label>
             </div>
             <label class="ctrl-check">
@@ -242,27 +245,35 @@ const imageOpacity = ref(1)
           :size="Math.min(size, 400)"
           :level="level"
           :background="transparentBg ? undefined : bgColor"
-          :gradient="useGradient ? {
-            type: gradientType,
-            rotation: gradientAngle,
-            stops: [
-              { offset: '0%', color: color1 },
-              { offset: '100%', color: color2 },
-            ],
-          } : undefined"
+          :gradient="
+            useGradient
+              ? {
+                  type: gradientType,
+                  rotation: gradientAngle,
+                  stops: [
+                    { offset: '0%', color: color1 },
+                    { offset: '100%', color: color2 },
+                  ],
+                }
+              : undefined
+          "
           :data-modules-settings="{
             style: moduleStyle,
             randomSize: randomSize,
           }"
           :finder-pattern-outer-settings="{ style: outerStyle }"
           :finder-pattern-inner-settings="{ style: innerStyle }"
-          :image-settings="useImage && imageSrc ? {
-            src: imageSrc,
-            width: imageWidth,
-            height: imageHeight,
-            excavate: imageExcavate,
-            opacity: imageOpacity,
-          } : undefined"
+          :image-settings="
+            useImage && imageSrc
+              ? {
+                  src: imageSrc,
+                  width: imageWidth,
+                  height: imageHeight,
+                  excavate: imageExcavate,
+                  opacity: imageOpacity,
+                }
+              : undefined
+          "
         />
       </div>
     </div>
@@ -297,7 +308,7 @@ const imageOpacity = ref(1)
 .ctrl-title {
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: .07em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--muted);
   margin: 0;
@@ -311,7 +322,9 @@ const imageOpacity = ref(1)
   font-weight: 500;
   color: #8a9ab0;
 }
-.ctrl-label--sm { flex: 1; }
+.ctrl-label--sm {
+  flex: 1;
+}
 
 .ctrl-row {
   display: flex;
@@ -328,12 +341,22 @@ const imageOpacity = ref(1)
   padding: 7px 10px;
   width: 100%;
   outline: none;
-  transition: border-color .15s;
+  transition: border-color 0.15s;
   -webkit-appearance: none;
 }
-.ctrl-input:focus { border-color: var(--accent); }
-.ctrl-input option { background: #1a1d24; }
-.ctrl-range { padding: 10px 4px; border: none; background: none; accent-color: var(--accent); cursor: pointer; }
+.ctrl-input:focus {
+  border-color: var(--accent);
+}
+.ctrl-input option {
+  background: #1a1d24;
+}
+.ctrl-range {
+  padding: 10px 4px;
+  border: none;
+  background: none;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
 
 .ctrl-check {
   display: flex;
@@ -343,7 +366,12 @@ const imageOpacity = ref(1)
   color: #8a9ab0;
   cursor: pointer;
 }
-.ctrl-check input { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
+.ctrl-check input {
+  accent-color: var(--accent);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
 
 .ctrl-color {
   width: 100%;
@@ -370,9 +398,13 @@ const imageOpacity = ref(1)
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: all .15s;
+  transition: all 0.15s;
 }
-.export-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.export-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
 
 /* Preview */
 .preview {
@@ -390,7 +422,12 @@ const imageOpacity = ref(1)
 }
 
 @media (max-width: 720px) {
-  .demo-layout { grid-template-columns: 1fr; }
-  .preview { position: static; min-height: 280px; }
+  .demo-layout {
+    grid-template-columns: 1fr;
+  }
+  .preview {
+    position: static;
+    min-height: 280px;
+  }
 }
 </style>

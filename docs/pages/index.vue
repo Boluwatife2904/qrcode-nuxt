@@ -1,21 +1,26 @@
 <script setup lang="ts">
-const { public: { siteUrl } } = useRuntimeConfig()
-const description = 'Highly customizable SVG QR codes for Vue and Nuxt. Style every pixel: data modules, finder patterns, gradients, image embedding, and SVG/PNG/JPEG export.'
+const {
+  public: { siteUrl },
+} = useRuntimeConfig();
+const description =
+  "Highly customizable SVG QR codes for Vue and Nuxt. Style every pixel: data modules, finder patterns, gradients, image embedding, and SVG/PNG/JPEG export.";
 
-useHead({ titleTemplate: null })
+useHead({ titleTemplate: null });
 useSeoMeta({
-  title: 'qrcode-nuxt',
+  title: "qrcode-nuxt",
   description,
-  ogTitle: 'qrcode-nuxt',
+  ogTitle: "qrcode-nuxt",
   ogDescription: description,
   ogUrl: siteUrl,
-  ogType: 'website',
-  ogImage: 'https://res.cloudinary.com/juwon-tech/image/upload/v1780531917/Screenshot_2026-06-04_at_01.08.43_lemg57.png',
-  twitterCard: 'summary_large_image',
-  twitterTitle: 'qrcode-nuxt',
+  ogType: "website",
+  ogImage:
+    "https://res.cloudinary.com/juwon-tech/image/upload/v1780531917/Screenshot_2026-06-04_at_01.08.43_lemg57.png",
+  twitterCard: "summary_large_image",
+  twitterTitle: "qrcode-nuxt",
   twitterDescription: description,
-  twitterImage: 'https://res.cloudinary.com/juwon-tech/image/upload/v1780531917/Screenshot_2026-06-04_at_01.08.43_lemg57.png',
-})
+  twitterImage:
+    "https://res.cloudinary.com/juwon-tech/image/upload/v1780531917/Screenshot_2026-06-04_at_01.08.43_lemg57.png",
+});
 </script>
 
 <template>
@@ -28,7 +33,14 @@ useSeoMeta({
           :size="120"
           level="H"
           :margin-size="2"
-          :gradient="{ type: 'linear', rotation: 135, stops: [{ offset: '0%', color: '#10b981' }, { offset: '100%', color: '#3b82f6' }] }"
+          :gradient="{
+            type: 'linear',
+            rotation: 135,
+            stops: [
+              { offset: '0%', color: '#10b981' },
+              { offset: '100%', color: '#3b82f6' },
+            ],
+          }"
           :data-modules-settings="{ style: 'rounded' }"
           :finder-pattern-outer-settings="{ style: 'rounded-lg' }"
           :finder-pattern-inner-settings="{ style: 'rounded-lg' }"
@@ -36,11 +48,12 @@ useSeoMeta({
       </div>
 
       <div class="hero-label">QRCODE-NUXT</div>
-      <h1 class="hero-title">The ultimate customizable<br><span class="grad">QR code generator</span><br>for Vue & Nuxt</h1>
+      <h1 class="hero-title">
+        The ultimate customizable<br /><span class="grad">QR code generator</span><br />for Vue & Nuxt
+      </h1>
       <p class="hero-sub">
-        A full port of the <code>react-qr-code</code> feature set to the Vue ecosystem.
-        Style every pixel: data modules, finder patterns, gradients, image embedding,
-        and SVG/PNG/JPEG export.
+        A full port of the <code>react-qr-code</code> feature set to the Vue ecosystem. Style every pixel: data modules,
+        finder patterns, gradients, image embedding, and SVG/PNG/JPEG export.
       </p>
 
       <div class="hero-actions">
@@ -49,10 +62,7 @@ useSeoMeta({
       </div>
 
       <div class="hero-install">
-        <DocsCodeBlock
-          code="pnpm add qrcode-nuxt"
-          lang="bash"
-        />
+        <DocsCodeBlock code="pnpm add qrcode-nuxt" lang="bash" />
       </div>
     </div>
 
@@ -61,7 +71,10 @@ useSeoMeta({
       <div class="feature">
         <div class="feature-icon">✦</div>
         <h3>Highly Customizable</h3>
-        <p>13 data module styles, 15 finder pattern styles, per-element color control, and gradient support for every layer.</p>
+        <p>
+          13 data module styles, 15 finder pattern styles, per-element color control, and gradient support for every
+          layer.
+        </p>
       </div>
       <div class="feature">
         <div class="feature-icon">◈</div>
@@ -72,14 +85,17 @@ useSeoMeta({
         <div class="feature-icon">⬡</div>
         <h3>Nuxt Auto-Imports</h3>
         <p>
-          <code>&lt;VueQRCode&gt;</code>, <code>&lt;QrcodeNuxt&gt;</code>, and the
-          <code>useQrcode</code> composable are auto-imported with zero config.
+          <code>&lt;VueQRCode&gt;</code>, <code>&lt;QrcodeNuxt&gt;</code>, and the <code>useQrcode</code> composable are
+          auto-imported with zero config.
         </p>
       </div>
       <div class="feature">
         <div class="feature-icon">⬡</div>
         <h3>Download API</h3>
-        <p>Expose a <code>download()</code> method via <code>ref</code> to export your QR code as SVG, PNG, or JPEG at any size.</p>
+        <p>
+          Expose a <code>download()</code> method via <code>ref</code> to export your QR code as SVG, PNG, or JPEG at
+          any size.
+        </p>
       </div>
       <div class="feature">
         <div class="feature-icon">◎</div>
@@ -94,7 +110,7 @@ useSeoMeta({
     </div>
 
     <!-- Quick example -->
-    <div class="prose" style="margin-top: 64px;">
+    <div class="prose" style="margin-top: 64px">
       <h2>Quick example</h2>
       <p>Drop the component anywhere in your Nuxt app — no imports required.</p>
       <DocsCodeBlock
@@ -121,7 +137,9 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.home { padding-bottom: 80px; }
+.home {
+  padding-bottom: 80px;
+}
 
 /* Hero */
 .hero {
@@ -137,13 +155,13 @@ useSeoMeta({
   border-radius: 12px;
   background: var(--code-bg);
   margin-bottom: 28px;
-  box-shadow: 0 0 40px rgba(16,185,129,.08);
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.08);
 }
 
 .hero-label {
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 16px;
@@ -152,7 +170,7 @@ useSeoMeta({
 .hero-title {
   font-size: clamp(28px, 5vw, 44px);
   font-weight: 800;
-  letter-spacing: -.035em;
+  letter-spacing: -0.035em;
   line-height: 1.12;
   color: var(--text-heading);
   margin-bottom: 20px;
@@ -174,7 +192,7 @@ useSeoMeta({
 }
 .hero-sub code {
   font-family: var(--font-code);
-  font-size: .85em;
+  font-size: 0.85em;
   color: var(--code-color);
   background: var(--inline-bg);
   border: 1px solid var(--border);
@@ -197,7 +215,7 @@ useSeoMeta({
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
-  transition: all .15s;
+  transition: all 0.15s;
   cursor: pointer;
   border: 1px solid transparent;
 }
@@ -205,16 +223,27 @@ useSeoMeta({
   background: var(--accent);
   color: #fff;
 }
-.btn-primary:hover { filter: brightness(1.1); }
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
 .btn-ghost {
   background: none;
   border-color: var(--border);
   color: var(--text);
 }
-.btn-ghost:hover { border-color: var(--subtle); background: rgba(128,128,128,.08); }
+.btn-ghost:hover {
+  border-color: var(--subtle);
+  background: rgba(128, 128, 128, 0.08);
+}
 
-.hero-install :deep(.cb) { margin: 0; }
-@media (min-width: 640px) { .hero-install { max-width: 320px; } }
+.hero-install :deep(.cb) {
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .hero-install {
+    max-width: 320px;
+  }
+}
 
 /* Features */
 .features {
@@ -230,15 +259,17 @@ useSeoMeta({
 .feature {
   padding: 28px 24px;
   background: var(--bg);
-  transition: background .15s;
+  transition: background 0.15s;
 }
-.feature:hover { background: rgba(255,255,255,.02); }
+.feature:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
 
 .feature-icon {
   font-size: 18px;
   color: var(--accent);
   margin-bottom: 12px;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .feature h3 {
@@ -256,7 +287,7 @@ useSeoMeta({
 
 .feature p code {
   font-family: var(--font-code);
-  font-size: .85em;
+  font-size: 0.85em;
   color: var(--code-color);
   background: var(--inline-bg);
   border: 1px solid var(--border);
