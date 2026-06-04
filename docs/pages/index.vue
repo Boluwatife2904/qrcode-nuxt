@@ -10,13 +10,11 @@ useSeoMeta({
   ogDescription: description,
   ogUrl: siteUrl,
   ogType: 'website',
+  ogImage: 'https://res.cloudinary.com/juwon-tech/image/upload/v1780531917/Screenshot_2026-06-04_at_01.08.43_lemg57.png',
   twitterCard: 'summary_large_image',
   twitterTitle: 'qrcode-nuxt',
   twitterDescription: description,
-})
-defineOgImage('DocsCover', {
-  title: 'qrcode-nuxt',
-  description,
+  twitterImage: 'https://res.cloudinary.com/juwon-tech/image/upload/v1780531917/Screenshot_2026-06-04_at_01.08.43_lemg57.png',
 })
 </script>
 

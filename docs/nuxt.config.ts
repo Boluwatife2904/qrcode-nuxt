@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   ignore: ["../dist/**", "../node_modules/**", "../.git/**"],
   css: ["~/assets/css/docs.css"],
   ogImage: {
-    zeroRuntime: true,
+    zeroRuntime: false,
   },
 
   app: {

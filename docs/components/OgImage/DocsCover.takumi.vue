@@ -137,7 +137,7 @@ const cells: boolean[] = [
           fontWeight: '800',
           color: '#ffffff',
           lineHeight: '1.05',
-          letterSpacing: '-2px',
+          letterSpacing: '-0.01em',
           fontFamily: 'Inter',
           marginBottom: '24px',
         }"

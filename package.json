@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "build": "nuxt-module-build build",
-    "dev": "nuxi dev docs",
+    "dev": "TMPDIR=/tmp nuxi dev docs",
     "docs:build": "nuxi build docs",
     "docs:generate": "nuxi generate docs",
     "typecheck": "vue-tsc --noEmit",
@@ -61,6 +61,7 @@
     "highlight.js": "^11.11.1",
     "nuxt": "^4.4.7",
     "nuxt-og-image": "^6.5.1",
+    "@takumi-rs/core": "^1.6.0",
     "satori": "^0.26.0",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3",
